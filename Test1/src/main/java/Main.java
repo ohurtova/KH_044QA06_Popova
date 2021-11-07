@@ -34,18 +34,11 @@ public class Main {
                 e.printStackTrace();
             }
             List<WebElement> products = driver.findElements(By.cssSelector("ul.catalog-grid.ng-star-inserted"));
-            //System.out.println(products.size());
 
             products.get(0).click();
 
             WebElement buttonBuy = driver.findElement(By.cssSelector("app-buy-button.toOrder.ng-star-inserted"));
             buttonBuy.click();
-
-            /*WebElement buttonClose = driver.findElement(By.xpath(".//button[@class='modal__close ng-star-inserted']"));
-            buttonClose.click();
-
-            WebElement cart = driver.findElement(By.cssSelector("span.counter.counter--green.ng-star-inserted"));
-            cart.click();*/
 
         } finally {
             driver.quit();
