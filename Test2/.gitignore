@@ -5,5 +5,5 @@
 # idea utils
 .idea
 *.iml
-Test2/.idea
+/Test2/.idea
 *.xml
