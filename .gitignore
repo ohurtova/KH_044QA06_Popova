@@ -24,6 +24,6 @@ hs_err_pid*
 
 # idea utils
 .idea
-Test1/.idea
 *.iml 
-
+Test1/.idea
+Test2/.idea
