@@ -5,19 +5,27 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-import static java.lang.String.valueOf;
+public class QuantityInCart extends BasePage {
 
+    @DataProvider(name = "productNames")
+    public Object[][] createData1() {
+        return new Object[][]{
+                {"робот пылесос Xiaomi"},
+                {"телевизор Samsung"},
+        };
+    }
 
-public class AddMethod extends BaseMethod {
+    @Test(dataProvider = "productNames")
+    public void addToCart(String input) {
 
-    @Test
-    public void addToCart() {
-        String input = "робот пылесос Xiaomi";
+        driver.manage().timeouts().implicitlyWait(8, TimeUnit.SECONDS);
         By searchElem = By.xpath(".//div//input");
         By products = By.cssSelector("ul.catalog-grid.ng-star-inserted");
         By buttonElem = By.cssSelector("button.buy-button.button");
@@ -36,12 +44,11 @@ public class AddMethod extends BaseMethod {
         WebElement buttonBuy = driver.findElement(buttonElem);
         buttonBuy.click();
 
-        //если 2 одинаковых товара
-        WebElement plus = driver.findElement(By.xpath("//button[@class='button button_color_white button_size_medium cart-counter__button'][2]"));
+        WebElement plus = driver.findElement(By.xpath("(//div/button[@class='button button_color_white button_size_medium cart-counter__button'])[2]"));
         plus.click();
 
-        List<WebElement> quantityInCart = driver.findElements(By.cssSelector("div.modal__content"));
-        String quantity = valueOf(quantityInCart.size());
+        WebElement quantityInCart = driver.findElement(By.cssSelector("input.cart-counter__input"));
+        String quantity = quantityInCart.getAttribute("value");
 
         WebElement buttonClose = driver.findElement(By.xpath(".//button[@class='modal__close ng-star-inserted']"));
         buttonClose.click();
@@ -54,7 +61,7 @@ public class AddMethod extends BaseMethod {
         } else {
             System.out.println("[FALSE]" + number);
         }
-        
+
     }
 
 }

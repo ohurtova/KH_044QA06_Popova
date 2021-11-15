@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 
 import java.util.List;
 
-public class FilterMethod extends BaseMethod {
+public class Filtration extends BasePage {
 
     @Test
     public void checkTitles() {

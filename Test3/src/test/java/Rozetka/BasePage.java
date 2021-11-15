@@ -7,10 +7,11 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import java.util.concurrent.TimeUnit;
 
-public class BaseMethod {
+public class BasePage {
     protected WebDriver driver;
 
     @BeforeSuite
@@ -20,7 +21,7 @@ public class BaseMethod {
         driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/");
     }
-    @BeforeSuite
+    @BeforeMethod
     public void toWait() {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
