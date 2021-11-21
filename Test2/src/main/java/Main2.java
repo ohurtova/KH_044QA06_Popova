@@ -39,7 +39,6 @@ public class Main2 {
             wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(listMonitors, 0));
 
             List<WebElement> list = driver.findElements(listMonitors);
-            //System.out.println(list.size());
             list.get(0).click();
 
 

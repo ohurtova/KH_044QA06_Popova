@@ -31,7 +31,6 @@ public class Main {
             wait.until(ExpectedConditions.numberOfElementsToBeMoreThan(products, 0));
 
             List<WebElement> productsList = driver.findElements(products);
-            //System.out.println(productsList.size());
             productsList.get(0).click();
 
             wait.until(ExpectedConditions.elementToBeClickable(buttonBuy));

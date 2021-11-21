@@ -25,4 +25,6 @@ hs_err_pid*
 # idea utils
 .idea
 *.iml 
-/target
+target
+Test2/target/classes/chromedriver.exe
+Test3/src/main/resources/chromedriver.exe
