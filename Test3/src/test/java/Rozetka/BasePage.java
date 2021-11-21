@@ -1,12 +1,8 @@
 package Rozetka;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import java.util.concurrent.TimeUnit;
@@ -20,10 +16,11 @@ public class BasePage {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.get("https://rozetka.com.ua/");
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
+
     @BeforeMethod
     public void toWait() {
-        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
     @AfterClass

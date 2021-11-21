@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite2" verbose="1" >
+    <test name="ProductList" >
+       <groups>
+           <run>
+               <include name="productList"/>
+           </run>
+       </groups>
+
+    </test>
+</suite>

@@ -1,0 +1,14 @@
+
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1" >
+  <test name="allTests" >
+    <classes>
+      <class name="Rozetka.QuantityInCart"></class>
+      <class name="Rozetka.DeleteFromCart"></class>
+      <class name="Rozetka.Filtration"></class>
+      <class name="Rozetka.SearchList"></class>
+    </classes>
+
+  </test>
+</suite>

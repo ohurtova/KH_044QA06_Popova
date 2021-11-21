@@ -36,7 +36,7 @@ public class Filtration extends BasePage {
             if (textTitle.toLowerCase().contains(titleContains)) {
                 System.out.println("[TRUE]" + textTitle);
             } else {
-                System.out.println("[FALSE]" + textTitle);
+                System.out.println("[FALSE] " + textTitle);
             }
         }
     }
