@@ -26,5 +26,3 @@ hs_err_pid*
 .idea
 *.iml 
 target
-Test2/target/classes/chromedriver.exe
-Test3/src/main/resources/chromedriver.exe
