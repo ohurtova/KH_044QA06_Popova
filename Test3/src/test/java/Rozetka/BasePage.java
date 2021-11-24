@@ -19,10 +19,6 @@ public class BasePage {
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
     }
 
-    @BeforeMethod
-    public void toWait() {
-    }
-
     @AfterClass
     public void endDriver() {
         driver.quit();
